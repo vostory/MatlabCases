@@ -2,14 +2,14 @@ function [tau,m]=CC_Method_tau_m(data,tau_max)
 x=data;
 x=x';
  
-X = [x-mean(x)]/[max(x)-min(x)];    % å½’ä¸€åŒ–åˆ°å‡å€¼ä¸º 0ï¼ŒæŒ¯å¹…ä¸º 1
+X = [x-mean(x)]/[max(x)-min(x)];    % ¹éÒ»»¯µ½¾ùÖµÎª 0£¬Õñ·ùÎª 1
 
-maxLags = tau_max;                  % æœ€å¤§æ—¶å»¶
-m_vector = 2:5;                 % m å–å€¼èŒƒå›´
+maxLags = tau_max;                  % ×î´óÊ±ÑÓ
+m_vector = 2:5;                 % m È¡Öµ·¶Î§
 sigma = std(X);
-r_vector = sigma/2*[1:4];       % r å–å€¼èŒƒå›´
+r_vector = sigma/2*[1:4];       % r È¡Öµ·¶Î§
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %åˆå§‹åŒ–
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %³õÊ¼»¯
 S_mean = zeros(1,maxLags);
 Sj = zeros(1,length(r_vector));
 delta_S_mean = zeros(1,maxLags);
@@ -22,16 +22,16 @@ for t = 1:maxLags
         for j = 1:length(r_vector)
             m = m_vector(i);
             r = r_vector(j);
-            S = ccFunction0(m,X,r,t);       % æ–‡çŒ®ä¸­å…¬å¼ï¼ˆ13ï¼‰
-            temp = temp + S;               % æ–‡çŒ®ä¸­å…¬å¼ï¼ˆ17ï¼‰ 
+            S = ccFunction0(m,X,r,t);       % ÎÄÏ×ÖĞ¹«Ê½£¨13£©
+            temp = temp + S;               % ÎÄÏ×ÖĞ¹«Ê½£¨17£© 
             Sj(j) = S;
         end
-        delta_S(i,t) = max(Sj)-min(Sj);    % delta_S(m,t),æ–‡çŒ®ä¸­å…¬å¼ï¼ˆ15ï¼‰
+        delta_S(i,t) = max(Sj)-min(Sj);    % delta_S(m,t),ÎÄÏ×ÖĞ¹«Ê½£¨15£©
     end
-    S_mean(t) = temp/(length(m_vector)*length(r_vector));   % æ–‡çŒ®ä¸­å…¬å¼ï¼ˆ17ï¼‰
-    delta_S_mean = mean(delta_S);                           % æ–‡çŒ®ä¸­å…¬å¼ï¼ˆ18ï¼‰
+    S_mean(t) = temp/(length(m_vector)*length(r_vector));   % ÎÄÏ×ÖĞ¹«Ê½£¨17£©
+    delta_S_mean = mean(delta_S);                           % ÎÄÏ×ÖĞ¹«Ê½£¨18£©
 end
-S_cor = delta_S_mean + abs(S_mean);                         % æ–‡çŒ®ä¸­å…¬å¼ï¼ˆ19ï¼‰
+S_cor = delta_S_mean + abs(S_mean);                         % ÎÄÏ×ÖĞ¹«Ê½£¨19£©
 toc
 
 figure(1)    
