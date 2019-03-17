@@ -1,0 +1,23 @@
+C-C方法计算时间延迟和嵌入维数
+主程序：C_CMethod.m, C_CMethod_independent.m
+子函数：correlation_integral.m(计算关联积分)
+        disjoint.m(将时间序列拆分成t个不相关的子序列)
+        heaviside.m（计算时间序列的海维赛函数值）
+参考文献Nonlinear dynamics, delay times, and embedding windows。
+计算Lyapunov指数：
+largest_lyapunov_exponent.m（用吕金虎的方法计算最大Lyapunov指数）
+参考文献：基于Lyapunov指数改进算法的边坡位移预测。
+lyapunov_wolf.m(用wolf方法计算最大Lyapunov指数)
+计算关联维数：G_P.m(G-P算法)
+
+混沌时间序列预测
+主函数
+MainPre_by_jiaquanyijie_1.m(该程序用加权一阶局域法对数据进行进行一步预测) 
+MainPre_by_jiaquanyijie_n.m(该程序用加权一阶局域法对数据进行进行n步预测)
+MainPre_by_Lya_1.m(基于最大Lyapunov指数的一步预测)
+MainPre_by_Lya_n.m(基于最大Lyapunov指数的n步预测)
+nearest_point.m(计算最后一个相点的最近相点的位置及最短距离)
+子函数
+jiaquanyijie.m(该函数用加权一阶局域法(xx)、零级近似(yy)和基于零级近似的加权一阶局域法(zz)对时间数据进行一步预测)
+pre_by_lya.m(基于最大Lyapunov指数的预测方法)
+pre_by_lya_new.m(改进的基于最大Lyapunov指数的预测方法)

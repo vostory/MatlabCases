@@ -1,0 +1,81 @@
+
+%------------------------------------------------------------------------------
+
+混沌时间序列分析与预测工具箱 Version2.9
+chaotic time series analysis and prediction matlab toolbox - trial version 2.9
+
+%------------------------------------------------------------------------------
+
+1、该工具箱包括了混沌时间序列分析与预测的常用方法,有:
+
+(1)产生混沌时间序列(chaotic time series)
+Logistic映射 - \ChaosAttractors\Main_Logistic.m
+Henon映射 - \ChaosAttractors\Main_Henon.m
+Lorenz吸引子 - \ChaosAttractors\Main_Lorenz.m
+Duffing吸引子 - \ChaosAttractors\Main_Duffing.m
+Duffing2吸引子 - \ChaosAttractors\Main_Duffing2.m
+Rossler吸引子 - \ChaosAttractors\Main_Rossler.m
+Chens吸引子 - \ChaosAttractors\Main_Chens.m
+Ikeda吸引子 - \ChaosAttractors\Main_Ikeda.m
+MackeyGLass序列 - \ChaosAttractors\Main_MackeyGLass.m
+Quadratic序列 - \ChaosAttractors\Main_Quadratic.m
+
+(2)求时延(delay time)
+自相关法 - \DelayTime_Others\Main_AutoCorrelation.m
+平均位移法 - \DelayTime_Others\Main_AverageDisplacement.m
+(去偏)复自相关法 - \DelayTime_Others\Main_ComplexAutoCorrelation.m
+互信息法 - \DelayTime_MutualInformation\Main_Mutual_Information.m
+
+(3)求嵌入维(embedding dimension)
+假近邻法 - \EmbeddingDimension_FNN\Main_FNN.m
+
+(4)同时求时延与嵌入窗(delay time & embedding window)
+CC方法 - \C-C Method\Main_CC_Method_Luzhenbo.m
+改进的CC方法 - \C-C Method Improved\Main_CC_Method_Improved.m
+
+(5)求关联维(correlation dimension)
+GP算法 - \CorrelationDimension_GP\Main_CorrelationDimension_GP.m
+
+(6)求K熵(Kolmogorov Entropy)
+GP算法 - \KolmogorovEntropy_GP\Main_KolmogorovEntropy_GP.m
+STB算法 - \KolmogorovEntropy_STB\Main_KolmogorovEntropy_STB.m
+
+(7)求最大Lyapunov指数(largest Lyapunov exponent)
+小数据量法 - \LargestLyapunov_Rosenstein\Main_LargestLyapunov_Rosenstein1.m
+             \LargestLyapunov_Rosenstein\Main_LargestLyapunov_Rosenstein2.m
+	     \LargestLyapunov_Rosenstein\Main_LargestLyapunov_Rosenstein3.m
+
+(8)求Lyapunov指数谱(Lyapunov exponent spectrum)
+BBA算法 - \LyapunovSpectrum_BBA\Main_LyapunovSpectrum_BBA1.m
+	  \LyapunovSpectrum_BBA\Main_LyapunovSpectrum_BBA2.m
+
+(9)求二进制图形的盒子维(box dimension)和广义维(genealized dimension)
+覆盖法 - \BoxDimension_2D\Main_BoxDimension_2D.m
+       - \GeneralizedDimension_2D\Main_GeneralizedDimension_2D.m
+
+(10)求时间序列的盒子维(box dimension)和广义维(genealized dimension)
+覆盖法 - \BoxDimension_TS\Main_BoxDimension_TS.m
+       - \GeneralizedDimension_TS\Main_GeneralizedDimension_TS.m
+
+(11)混沌时间序列预测(chaotic time series prediction)
+RBF神经网络一步预测 - \Prediction_RBF\Main_RBF.m
+RBF神经网络多步预测 - \Prediction_RBF\Main_RBF_MultiStepPred.m
+Volterra级数一步预测 - \Prediction_Volterra\Main_Volterra.m
+Volterra级数多步预测 - \Prediction_Volterra\Main_Volterra_MultiStepPred.m
+
+(12)产生替代数据(Surrogate Data)
+随机相位法 - \SurrogateData\Main_SurrogateData.m
+
+2、在matlab环境中首先运行install.m,将工具箱所在路径添加至matlab
+
+3、各子目录下以Main_开头的文件即是主程序文件,直接按快捷键F5运行即可
+
+4、工具箱中所有程序均在 "Windows XP SP2 + Matlab7.1" 环境中调试通过，不能保证在其它平台上正确运行。
+
+5、工具箱中部分功能为试用版，敬请谅解！
+
+6、
+作者：陆振波，海军工程大学
+欢迎同行来信交流与合作，更多文章与程序下载请访问我的个人主页
+电子邮件：luzhenbo@yahoo.com.cn
+个人主页：http://blog.sina.com.cn/luzhenbo2
